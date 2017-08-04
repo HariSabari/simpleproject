@@ -5,9 +5,10 @@ class welcomeusecase extends CI_Model {
 	function __construct(){
 		$this->load->model('businesslogic/welcomebl','wbl',TRUE);
 	}
-	public function welcome()
+	
+	public function data()
 	{
-		$response = $this->wbl->welcome();
+		$response = $this->wbl->data();
 		return $response;
 	}
 }

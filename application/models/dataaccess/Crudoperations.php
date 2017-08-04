@@ -30,21 +30,9 @@ class Crudoperations extends CI_Model {
 		
 	}
 	
-	public function read1($sql){
-		try {
-			$db = $this->conncectDb();
-			$records = $db->query($sql);
-			$db->DBClose();
-			unset($client);
-			return $records;
-		} catch (OrientDBException $e) {
-			return false;
-		}
-	}
-	
 	public function read($sql){
 			$config = $this->getDbConf();
-			$ur = "http://".$config['user'].":".$config['pass']."@".$config['host'].":".$config['httpport']."/".$sql."";
+			$ur = "http://".$config['user'].":".$config['pass']."@".$config['host'].":".$config['httpport']."/query/".$this->ap->getDbName()."/sql/".rawurlencode($sql)."/-1";
 			$agent= 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.0.3705; .NET CLR 1.1.4322)';
 			$ch = curl_init();
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);

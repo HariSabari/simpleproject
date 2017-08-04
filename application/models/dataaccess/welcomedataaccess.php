@@ -5,9 +5,10 @@ class welcomedataaccess extends CI_Model {
 	function __construct(){
 		$this->load->model('dataaccess/Crudoperations','crud',TRUE);
 	}
-	public function welcome()
+	
+	public function data()
 	{
-		$sql = "select * from sms_activity";
+		$sql = "select * from School";
 		$response = $this->crud->read($sql);
 		return $response;
 	}

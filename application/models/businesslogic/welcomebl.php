@@ -5,9 +5,10 @@ class welcomebl extends CI_Model {
 	function __construct(){
 		$this->load->model('dataaccess/welcomedataaccess','wda',TRUE);
 	}
-	public function welcome()
+
+	public function data()
 	{
-		$response = $this->wda->welcome();
+		$response = $this->wda->data();
 		return $response;
 	}
 }

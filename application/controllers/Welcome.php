@@ -12,10 +12,10 @@ class Welcome extends REST_Controller  {
 		$this->load->view('welcome_message');
 	}
 	
-	public function welcome_get()
+	public function data_post()
 	{
-		$response = $this->wus->welcome();
-		print_r(json_encode($response));
+		$response = $this->wus->data();
+		print_r($response);
 	}
 	
 }
