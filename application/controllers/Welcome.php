@@ -9,7 +9,7 @@ class Welcome extends REST_Controller  {
 	
 	public function index_get()
 	{
-		$this->load->view('welcome_message');
+		$this->load->view('pages/welcome_message');
 	}
 	
 	public function data_post()

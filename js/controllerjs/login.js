@@ -1,12 +1,26 @@
 var app = angular.module('login',[]);
 app.controller('logincontroller',function($scope,$http){
 $scope.number = 5;
-	$scope.click = function(){
+	$scope.login = function(){
 		$http({
-			url: baseurl + 'index.php/welcome/data',
-			method: "POST"
+			url: baseurl + 'login/login',
+			method: "POST",
+			data:{
+				'username' : $scope.user.email,
+				'password' : $scope.user.password
+			}
 		}).success(function(response){
-			$scope.result = response;
+			if(response != null)
+				window.location.href = baseurl + 'welcome';
+		});
+	}
+	$scope.logout = function(){
+		$http({
+			url: baseurl + 'login/logout',
+			method: "GET"
+		}).success(function(response){
+			if(response == 'logout')
+				window.location.href = baseurl + 'login';
 		});
 	}
 });
