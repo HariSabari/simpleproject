@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
-	<link rel="stylesheet" href="<?php print base_url();?>css/style.css">
 </head>
 <body>
 	<div class="container" ng-app="login" ng-controller="logincontroller">
@@ -26,6 +25,7 @@
 	<script type="text/javascript">
 		var baseurl = '<?php print base_url();?>';
 	</script>
+	<link rel="stylesheet" href="<?php print base_url();?>css/requiredcss/style.css">
 	<script type="text/javascript" src="<?php print base_url();?>js/angularjs/angular.min.js"></script>
 	<script type="text/javascript" src="<?php print base_url();?>js/controllerjs/login.js"></script>
 </body>

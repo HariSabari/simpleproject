@@ -11,9 +11,10 @@ $scope.number = 5;
 			}
 		}).success(function(response){
 			if(response != null)
-				window.location.href = baseurl + 'welcome';
+				window.location.href = baseurl + 'home';
 		});
 	}
+	
 	$scope.logout = function(){
 		$http({
 			url: baseurl + 'login/logout',
