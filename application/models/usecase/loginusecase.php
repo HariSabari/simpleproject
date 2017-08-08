@@ -22,7 +22,6 @@ class loginusecase extends CI_Model {
 	public function logout()
 	{
 		$this->session->unset_userdata('usersession');
-		return "logout";
 	}
 	
 }

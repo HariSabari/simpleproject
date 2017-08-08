@@ -14,14 +14,4 @@ $scope.number = 5;
 				window.location.href = baseurl + 'home';
 		});
 	}
-	
-	$scope.logout = function(){
-		$http({
-			url: baseurl + 'login/logout',
-			method: "GET"
-		}).success(function(response){
-			if(response == 'logout')
-				window.location.href = baseurl + 'login';
-		});
-	}
 });

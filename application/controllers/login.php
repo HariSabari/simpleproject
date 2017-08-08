@@ -9,7 +9,7 @@ class login extends REST_Controller  {
 	
 	public function index_get()
 	{
-		$this->load->view('pages/login');
+		$this->load->view('login');
 	}
 	
 	public function login_post()
@@ -22,7 +22,7 @@ class login extends REST_Controller  {
 	public function logout_get()
 	{
 		$response = $this->lus->logout();
-		print_r($response);
+		 redirect("login","refresh");
 	}
 	
 }

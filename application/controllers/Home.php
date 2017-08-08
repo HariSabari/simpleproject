@@ -9,7 +9,10 @@ class Home extends REST_Controller  {
 	
 	public function index_get()
 	{
+		$this->load->view('common/header');
+		$this->load->view('common/sidemenu');
 		$this->load->view('pages/homepage');
+		$this->load->view('common/footer');
 	}
 	
 }
