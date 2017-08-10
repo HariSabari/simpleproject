@@ -43,7 +43,6 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                  {{value}}
                     <div id='monthviewscalendar'></div>
                     <!-- calendar modal -->
 				    <div id="CalenderModalNew" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -114,6 +113,28 @@
 				        </div>
 				      </div>
 				    </div>
+
+
+				    <div id="description" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				      <div class="modal-dialog">
+				        <div class="modal-content">
+
+				          <div class="modal-header">
+				            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				            <h4 class="modal-title" id="myModalLabel2">Description</h4>
+				          </div>
+				          <div class="modal-body">
+							Waffor Holiday				          
+				          </div>
+				          <div class="modal-footer">
+				            <button type="button" class="btn btn-default antoclose2" data-dismiss="modal">Close</button>
+				            <button type="button" class="btn btn-primary antosubmit2">Save changes</button>
+				          </div>
+				        </div>
+				      </div>
+				    </div>	
+
+
 
 				    <div id="fc_create" data-toggle="modal" data-target="#CalenderModalNew"></div>
 				    <div id="fc_edit" data-toggle="modal" data-target="#CalenderModalEdit"></div>

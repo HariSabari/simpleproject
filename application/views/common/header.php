@@ -77,5 +77,9 @@
     <script src="<?php print base_url();?>vendors/build/js/custom.min.js"></script>
 
     <script src="<?php print base_url();?>js/requiredjs/angular.min.js"></script>
+
+    <script>
+        var baseurl = '<?php print base_url();?>';
+    </script>
     
   </head>

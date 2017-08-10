@@ -4,9 +4,9 @@ require APPPATH.'/libraries/REST_Controller.php';
 class Calendar extends REST_Controller  {
 	function Calendar() {
 		parent::__construct();
-		// $this->load->model('usecase/welcomeusecase','wus',TRUE);
+		$this->load->model('usecase/calendar_uc','cus',TRUE);
 	}
-	
+	 	
 	public function index_get()
 	{
 		$this->load->view('common/header');
@@ -22,6 +22,10 @@ class Calendar extends REST_Controller  {
 		$this->load->view('pages/tab');
 		$this->load->view('common/footer');
 	}
-	
+	public function appointment_post()
+	{
+		$response = $this->cus->appointment();
+		print $response;
+	}
 }
 ?>

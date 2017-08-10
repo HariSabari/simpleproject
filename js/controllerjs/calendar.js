@@ -1,13 +1,34 @@
 var app = angular.module('calendar',[]);
-app.controller('calendarcontroller',function($scope,$http){
+app.controller('calendarcontroller',function($scope,$http,$timeout){
+	$scope.array_color = ['yellow','blue','green'];
+	$scope.application_list = {'nameList': []};
+	$scope.appointment = function(){
+		$http({
+			url: baseurl + "calendar/appointment",
+			method:"POST"
+		}).success(function(response){
+			$scope.app_list = response.result;
+			angular.forEach($scope.app_list,function(value,index){
+				$scope.application_list.nameList.push({
+					'title':value.title,
+					'start':value.start,
+					'end':value.end,
+					'color':value.color
+				});
+			});
+			$scope.callCalendar();
+		});
+	}
+	$scope.appointment();
 	$scope.color = function(){
-		$scope.events_array = [{
-			title: "Event 1",
+		/*$scope.events_array = [{
+			"title": "Event 1",
 			// Set to 1st of the month at 12:00 am
-			start: moment().startOf('month'),
+			"start": moment().startOf('month'),
 			// Set to en the 1st of the month at 1:30 am
-			end: moment().startOf('month').add(90, 'minutes'),
-			color: "red",
+			"end": moment().startOf('month').add(90, 'minutes'),
+			"color": $scope.array_color[2],
+			"id":"first"
 			}, {
 			title: "Event 2",
 			// Set to 1st of the month at 12:00 am
@@ -38,28 +59,41 @@ app.controller('calendarcontroller',function($scope,$http){
 			// This is an all-day event
 			allDay: true
 		},
-		];
+		];*/
 	}
 	$scope.color();
-
-	$('#monthviewscalendar').fullCalendar({
-		header:{
-			left: 'prev,next today',
-			center: 'title',
-			right: 'month,agendaWeek,agendaDay'
-		},
-		editable: true,
-		selectable: true,
-		eventLimit: true,
-		select: function(start, end, jsEvent, view) {
-			$('#CalenderModalNew').modal('show');
-		},
-		eventClick: function(event, jsEvent, view) {
-			$('#CalenderModalEdit').modal('show');
-		},
-		eventDrop:function(event, delta, revertFunc, jsEvent, ui, view ){
-			$('#CalenderModalEdit').modal('show');
-		},
-		events: $scope.events_array
-	});
+	$scope.leavedate = moment('2017-08-21');
+	$scope.callCalendar = function() {
+		$('#monthviewscalendar').fullCalendar({
+				header:{
+					left: 'prev,next today',
+					center: 'title',
+					right: 'month,agendaWeek,agendaDay'
+				},
+				editable: true,
+				selectable: true,
+				eventLimit: true,
+				select: function(start, end, jsEvent, view) {
+					alert(start);
+					if(start.format('YYYY-MM-DD') > $scope.leavedate.format('YYYY-MM-DD') && end.format('YYYY-MM-DD') < $scope.leavedate.format('YYYY-MM-DD'))
+						$('#CalenderModalNew').modal('show');
+					else
+						$('#description').modal('show');
+				},
+				eventClick: function(event, jsEvent, view) {
+					alert(event.id);
+					$('#CalenderModalEdit').modal('show');
+				},
+				eventDrop:function(event, delta, revertFunc, jsEvent, ui, view ){
+					$('#CalenderModalEdit').modal('show');
+				},
+				events: $scope.application_list.nameList,
+				dayRender: function(date, cell){
+		        if (date.format('YYYY-MM-DD') == $scope.leavedate.format('YYYY-MM-DD')){
+		        	//cell.css('disabled','disabled');
+		            cell.css("background-color","red");
+		        }
+    		},
+		});
+	}
 });
