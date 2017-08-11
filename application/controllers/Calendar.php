@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 require APPPATH.'/libraries/REST_Controller.php';
-class Calendar extends REST_Controller  {
+class Calendar extends REST_Controller {
 	function Calendar() {
 		parent::__construct();
 		$this->load->model('usecase/calendar_uc','cus',TRUE);

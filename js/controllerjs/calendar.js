@@ -73,15 +73,13 @@ app.controller('calendarcontroller',function($scope,$http,$timeout){
 				editable: true,
 				selectable: true,
 				eventLimit: true,
-				select: function(start, end, jsEvent, view) {
-					alert(start);
-					if(start.format('YYYY-MM-DD') > $scope.leavedate.format('YYYY-MM-DD') && end.format('YYYY-MM-DD') < $scope.leavedate.format('YYYY-MM-DD'))
-						$('#CalenderModalNew').modal('show');
-					else
+				select: function(start, end, calEvent ,jsEvent, view) {
+					if((start.format('YYYY-MM-DD') < $scope.leavedate.format('YYYY-MM-DD'))&&(end.format('YYYY-MM-DD') > $scope.leavedate.format('YYYY-MM-DD')) || (start.format('YYYY-MM-DD') == $scope.leavedate.format('YYYY-MM-DD')))
 						$('#description').modal('show');
+					else
+						$('#CalenderModalNew').modal('show');
 				},
 				eventClick: function(event, jsEvent, view) {
-					alert(event.id);
 					$('#CalenderModalEdit').modal('show');
 				},
 				eventDrop:function(event, delta, revertFunc, jsEvent, ui, view ){
