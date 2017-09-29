@@ -68,7 +68,7 @@ app.controller('calendarcontroller',function($scope,$http,$timeout){
 				header:{
 					left: 'prev,next today',
 					center: 'title',
-					right: 'month,agendaWeek,agendaDay'
+					right: 'agendaWeek'
 				},
 				editable: true,
 				selectable: true,

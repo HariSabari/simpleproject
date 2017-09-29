@@ -22,6 +22,13 @@ class Calendar extends REST_Controller {
 		$this->load->view('pages/tab');
 		$this->load->view('common/footer');
 	}
+	public function third_get()
+	{
+		$this->load->view('common/header');
+		$this->load->view('common/sidemenu');
+		$this->load->view('pages/photo');
+		$this->load->view('common/footer');
+	}
 	public function appointment_post()
 	{
 		$response = $this->cus->appointment();

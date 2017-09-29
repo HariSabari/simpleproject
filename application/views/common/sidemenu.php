@@ -30,7 +30,7 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Home</a></li>
                   <li><a><i class="fa fa-edit"></i> Forms</a></li>
-                  <li><a><i class="fa fa-desktop"></i> UI Elements</a></li>
+                  <li><a href="<?php print base_url();?>calendar/third"><i class="fa fa-desktop"></i> UI Elements</a></li>
                   <li><a href="<?php print base_url();?>calendar/second"><i class="fa fa-table"></i> Tables</a></li>
                   <li><a href="<?php print base_url();?>home/second"><i class="fa fa-bar-chart-o"></i> Data Presentation</a></li>
                   <li><a href="<?php print base_url();?>calendar"><i class="fa fa-clone"></i>Layouts</a></li>
