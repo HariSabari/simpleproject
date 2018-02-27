@@ -30,8 +30,13 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
+<<<<<<< HEAD
             <form>
               <h1>Login</h1>
+=======
+            <form>
+              <h1>Login Form 1234</h1>
+>>>>>>> refs/remotes/origin/master
               <div>
                 <input type="text" class="form-control" placeholder="Username" required="" ng-model="user.email" />
               </div>
