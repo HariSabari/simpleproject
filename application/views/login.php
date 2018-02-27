@@ -31,7 +31,7 @@
         <div class="animate form login_form">
           <section class="login_content">
             <form>
-              <h1>Login</h1>
+              <h1>Login Hello</h1>
               <div>
                 <input type="text" class="form-control" placeholder="Username" required="" ng-model="user.email" />
               </div>
@@ -55,7 +55,7 @@
 
                 <div>
                   <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                  <p>Â©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
                 </div>
               </div>
             </form>
@@ -91,7 +91,7 @@
 
                 <div>
                   <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                  <p>Â©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
                 </div>
               </div>
             </form>
